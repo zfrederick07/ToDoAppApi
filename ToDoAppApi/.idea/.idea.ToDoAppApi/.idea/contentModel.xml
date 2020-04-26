@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="ToDoAppApi" t="IncludeRecursive">
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Command" t="Include">
+          <e p="Command" t="Include" />
+          <e p="Handlers" t="Include" />
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="ToDoListController.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="ToDoItem.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="ToDoAppApi.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Query" t="Include">
+          <e p="Command" t="Include">
+            <e p="ToDoList" t="Include">
+              <e p="GetToDoListQuery.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Handlers" t="Include">
+            <e p="ToDoList" t="Include">
+              <e p="GetToDoListQueryHandler.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="ToDoAppApi.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="ToDoAppApi.sln" t="IncludeFlat" />
+    </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2018.3/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2018.3/resharper-host/local/Transient/ReSharperHost/v183/SolutionCaches/_ToDoAppApi.-221115288.00" t="ExcludeRecursive" />
+  </component>
+</project>
