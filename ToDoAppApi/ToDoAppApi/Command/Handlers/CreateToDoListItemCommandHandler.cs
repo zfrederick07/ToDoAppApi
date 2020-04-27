@@ -18,6 +18,9 @@ namespace ToDoAppApi.Command.Handlers
 
         public async Task<bool> Handle(CreateToDoListItemCommand request, CancellationToken cancellationToken)
         {
+            var id = Repository.GetAllList().Count + 1;
+            request.ToDoItem.Id = id;
+            
             Repository.CreateToDoItem(request.ToDoItem);
             return true;
         }
