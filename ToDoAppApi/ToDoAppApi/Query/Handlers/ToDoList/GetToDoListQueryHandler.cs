@@ -5,18 +5,22 @@ using System.Threading.Tasks;
 using MediatR;
 using ToDoAppApi.Models;
 using ToDoAppApi.Query.Command.ToDoList;
+using ToDoAppApi.Repository.Interface;
 
 namespace ToDoAppApi.Query.Handlers.ToDoList
 {
     public class GetToDoListQueryHandler : IRequestHandler<GetToDoListQuery, List<ToDoItem>>
     {
+        private readonly IToDoItemsRepository _repository;
+
+        public GetToDoListQueryHandler(IToDoItemsRepository repository)
+        {
+            _repository = repository;
+        }
+
         public Task<List<ToDoItem>> Handle(GetToDoListQuery request, CancellationToken cancellationToken)
         {
-            var toDoItem = new ToDoItem(1, "Test", "Test Description", true);
-            var toDoItem2 = new ToDoItem(2, "Test2", "Test2 Description", false);
-
-            var list = new List<ToDoItem>() {toDoItem, toDoItem2};
-            return Task.FromResult(list);
+            return Task.FromResult(_repository.GetAllList());
         }
     }
 }

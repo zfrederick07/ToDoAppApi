@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using ToDoAppApi.Command.Command;
 using ToDoAppApi.Models;
 using ToDoAppApi.Query.Command.ToDoList;
 
@@ -30,24 +31,39 @@ namespace ToDoAppApi.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<string> GetToDoListItem(int id)
+        public async Task<ToDoItem> GetToDoListItem(int id)
         {
-            return "value";
+            var query = new GetToDoListItemByIdQuery(id);
+            var result = await mediator.Send(query);
+
+            return result;
         }
 
-        [HttpPost]
-        public void CreateToDoListItem([FromBody] string value)
+        [HttpPost("create")]
+        public async Task<bool> CreateToDoListItem([FromBody] ToDoItem item)
         {
+            var command = new CreateToDoListItemCommand(item);
+            var result = await mediator.Send(command);
+
+            return result;
         }
 
-        [HttpPost("{id}")]
-        public void UpdateToDoListItem(int id, [FromBody] string value)
+        [HttpPost("update")]
+        public async Task<bool> UpdateToDoListItem([FromBody] ToDoItem item)
         {
+            var command = new UpdateToDoListItemCommand(item);
+            var result = await mediator.Send(command);
+
+            return result;
         }
 
-        [HttpDelete("{id}")]
-        public void DeleteToDoListItem(int id)
+        [HttpDelete("delete/{id}")]
+        public async Task<bool> DeleteToDoListItem(int id)
         {
+            var command = new DeleteToDoListItemCommand(id);
+            var result = await mediator.Send(command);
+
+            return result;
         }
     }
 }

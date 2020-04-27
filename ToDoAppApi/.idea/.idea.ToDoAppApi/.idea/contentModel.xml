@@ -8,8 +8,16 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="Command" t="Include">
-          <e p="Command" t="Include" />
-          <e p="Handlers" t="Include" />
+          <e p="Command" t="Include">
+            <e p="CreateToDoListItemCommand.cs" t="Include" />
+            <e p="DeleteToDoListItemCommand.cs" t="Include" />
+            <e p="UpdateToDoListItemCommand.cs" t="Include" />
+          </e>
+          <e p="Handlers" t="Include">
+            <e p="CreateToDoListItemCommandHandler.cs" t="Include" />
+            <e p="DeleteToDoListItemCommandHandler.cs" t="Include" />
+            <e p="UpdateToDoListItemCommandHandler.cs" t="Include" />
+          </e>
         </e>
         <e p="Controllers" t="Include">
           <e p="ToDoListController.cs" t="Include" />
@@ -31,14 +39,22 @@
         <e p="Query" t="Include">
           <e p="Command" t="Include">
             <e p="ToDoList" t="Include">
+              <e p="GetToDoListItemByIdQuery.cs" t="Include" />
               <e p="GetToDoListQuery.cs" t="Include" />
             </e>
           </e>
           <e p="Handlers" t="Include">
             <e p="ToDoList" t="Include">
+              <e p="GetToDoListItemByIdQueryHandler.cs" t="Include" />
               <e p="GetToDoListQueryHandler.cs" t="Include" />
             </e>
           </e>
+        </e>
+        <e p="Repository" t="Include">
+          <e p="Interface" t="Include">
+            <e p="IToDoItemsRepository.cs" t="Include" />
+          </e>
+          <e p="ToDoItemsRepository.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="ToDoAppApi.csproj" t="IncludeRecursive" />
